@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", async () => {
   // Récupération de l'id dans l'URL
   const urlParams = new URLSearchParams(window.location.search);
-  const cardID = urlParams.get("id");
+  const slug = urlParams.get("slug");
 
   try {
 
-    const response = await fetch("/cards/" + cardID);
+    const response = await fetch("https://hp-api.lainocs.fr/characters/" + slug);
     const cardData = await response.json();
 
     const cardDetails = document.createElement('div');
